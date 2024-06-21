@@ -8,32 +8,46 @@
     <link rel="stylesheet" href="{% static 'css/footer.css' %}">
 </head>
 <body>
-    <div id="chat-container">
-        <h1>Welcome to this platform</h1>
-        <div id="messages">
-            <div class="message bot">{{ preset_response }}</div>
+    <div id="container">
+        <div id="sidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">×</a>
+            <h2>Navigation</h2>
+            <ul>
+                <li><a href="{% url 'home' %}">Introduction</a></li>
+                <li><a href="{% url 'index' %}">Chatbot</a></li>
+            </ul>
         </div>
-        <form id="chat-form">
-            <input type="text" id="message-input" autocomplete="off" placeholder="Type your message here...">
-            <button type="submit">Send</button>
-        </form>
+        <div id="content" id="mainContent">
+            <button class="open-btn" onclick="toggleNav()">☰</button>
+            <div id="chat-container">
+                <h1>Welcome to this platform</h1>
+                <div id="messages-container">
+                    <div id="messages">
+                        <div class="message bot">{{ preset_response }}</div>
+                    </div>
+                </div>
+                <form id="chat-form">
+                    <input type="text" id="message-input" autocomplete="off" placeholder="Type your message here...">
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
     </div>
-    <!-- <footer>
+    
+    <footer>
         <div class="footer-container">
-            <div class="footer-text">© GenAI Stars 2024 NGS Platform </div>
+            <div class="footer-text">© GenAI Stars 2024 NGS Platform</div>
             <div class="footer-icon">
                 <a href="https://github.com/Bai1026/GenAI_Stars-NGS_Platform/tree/main" target="_blank">
                     <img src="{% static 'images/github.png' %}" alt="Our GitHub" style="width:20px; height:20px;">
                 </a>
                 <a href="mailto:b09602017@ntu.edu.tw" target="_blank">
-                    <img src="{% static 'images/email.png' %}" alt="Our GitHub" style="width:20px; height:20px;">
+                    <img src="{% static 'images/email.png' %}" alt="Our Email" style="width:20px; height:20px;">
                 </a>
             </div>
         </div>
-    </footer> -->
-    <!-- <footer>
-        <p>&copy; 2024 Your Company Name. All rights reserved.</p>
-    </footer> -->
+    </footer>
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const presetResponse = "{{ preset_response }}";
@@ -57,30 +71,59 @@
             userMessageDiv.textContent = message;
             messagesDiv.appendChild(userMessageDiv);
 
-            // 发送请求到服务器
-            const response = await fetch('/chat/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                    'X-CSRFToken': '{{ csrf_token }}'
-                },
-                body: new URLSearchParams({message})
-            });
+            try {
+                // 发送请求到服务器
+                const response = await fetch('/chat/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'X-CSRFToken': '{{ csrf_token }}'
+                    },
+                    body: new URLSearchParams({message: message})
+                });
 
-            const data = await response.json();
+                const data = await response.json();
 
-            // 添加机器人回复到聊天窗口
-            const botMessageDiv = document.createElement('div');
-            botMessageDiv.className = 'message bot';
-            botMessageDiv.textContent = data.response;
-            messagesDiv.appendChild(botMessageDiv);
+                if (response.ok) {
+                    // 添加机器人回复到聊天窗口
+                    const botMessageDiv = document.createElement('div');
+                    botMessageDiv.className = 'message bot';
+                    botMessageDiv.textContent = data.response;
+                    messagesDiv.appendChild(botMessageDiv);
+                } else {
+                    console.error(data.error || 'An error occurred');
+                    // 处理错误响应
+                    const errorMessageDiv = document.createElement('div');
+                    errorMessageDiv.className = 'message error';
+                    errorMessageDiv.textContent = data.error || 'An error occurred';
+                    messagesDiv.appendChild(errorMessageDiv);
+                }
+
+            } catch (error) {
+                console.error('Error:', error);
+                // 处理网络错误
+                const errorMessageDiv = document.createElement('div');
+                errorMessageDiv.className = 'message error';
+                errorMessageDiv.textContent = 'A network error occurred';
+                messagesDiv.appendChild(errorMessageDiv);
+            }
 
             // 滚动到最新消息
             messagesDiv.scrollTop = messagesDiv.scrollHeight;
         });
+
+        function toggleNav() {
+            const sidebar = document.getElementById("sidebar");
+            const content = document.getElementById("mainContent");
+
+            if (sidebar.style.width === "200px") {
+                sidebar.style.width = "0";
+                content.classList.remove("active");
+            } else {
+                sidebar.style.width = "200px";
+                content.classList.add("active");
+            }
+        }
     </script>
 </body>
 </html>
-
-
-

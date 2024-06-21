@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}NGS Platform{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div id="container">
+        <div id="sidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">×</a>
+            <h2>Navigation</h2>
+            <ul>
+                <li><a href="{% url 'home' %}">Introduction</a></li>
+                <li><a href="{% url 'index' %}">Chatbot</a></li>
+            </ul>
+        </div>
+        <div id="content" id="mainContent">
+            <button class="open-btn" onclick="toggleNav()">☰</button>
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-text">© GenAI Stars 2024 NGS Platform</div>
+            <div class="footer-icon">
+                <a href="https://github.com/Bai1026/GenAI_Stars-NGS_Platform/tree/main" target="_blank">
+                    <img src="{% static 'images/github.png' %}" alt="Our GitHub" style="width:20px; height:20px;">
+                </a>
+                <a href="mailto:b09602017@ntu.edu.tw" target="_blank">
+                    <img src="{% static 'images/email.png' %}" alt="Our Email" style="width:20px; height:20px;">
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
