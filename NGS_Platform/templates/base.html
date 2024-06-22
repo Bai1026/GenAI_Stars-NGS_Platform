@@ -21,7 +21,7 @@
             {% block content %}{% endblock %}
         </div>
     </div>
-    <footer>
+    <!-- <footer>
         <div class="footer-container">
             <div class="footer-text">© GenAI Stars 2024 NGS Platform</div>
             <div class="footer-icon">
@@ -33,7 +33,21 @@
                 </a>
             </div>
         </div>
-    </footer>
+    </footer> -->
     <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-text">© GenAI Stars 2024 NGS Platform</div>
+        <div class="footer-icon">
+            <a href="https://github.com/Bai1026/GenAI_Stars-NGS_Platform/tree/main" target="_blank">
+                <img src="{% static 'images/github.png' %}" alt="Our GitHub" style="width:20px; height:20px;">
+            </a>
+            <a href="mailto:b09602017@ntu.edu.tw" target="_blank">
+                <img src="{% static 'images/email.png' %}" alt="Our Email" style="width:20px; height:20px;">
+            </a>
+        </div>
+    </div>
+</footer>
