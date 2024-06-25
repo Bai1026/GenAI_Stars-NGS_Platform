@@ -1,0 +1,64 @@
+2024-06-25 19:27:45,079 INFO User info submitted: {'age': 'N/A', 'education': 'N/A', 'occupation': 'N/A', 'language': 'N/A'}
+2024-06-25 19:27:51,918 INFO Full message to model: 此用戶資訊為： 年齡: N/A, 教育程度: N/A, 職業: N/A, 語言: N/A. 請根據此用戶資訊使用適合的術語去介紹NGS給用戶。如果沒有提及語言，預設即為中文。
+
+你好 我的年齡為
+2024-06-25 19:27:55,774 INFO Bot response: 您好！根據您提供的信息，我將介紹NGS（Next Generation Sequencing，下一代基因定序）給您。
+
+NGS是一種先進的基因定序技術，可用於快速地獲取和分析個體的基因組信息。通過NGS，我們能夠更深入地了解個體DNA的組成，對基因變異和突變進行更準確的檢測，並應用於各種研究和臨床領域。
+
+如果您對NGS有任何問題或想了解更多信息，請隨時告訴我！
+2024-06-25 19:31:57,666 INFO User info submitted: {'age': 'N/A', 'education': 'N/A', 'occupation': 'N/A', 'language': 'N/A'}
+2024-06-25 19:39:41,501 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-06-25 19:39:54,144 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-06-25 19:40:03,543 INFO User info submitted: {'age': 'N/A', 'education': 'N/A', 'occupation': 'N/A', 'language': 'N/A'}
+2024-06-25 19:47:25,097 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/urls.py changed, reloading.
+2024-06-25 19:48:59,836 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-06-25 19:49:52,399 WARNING Not Found: /favicon.ico
+2024-06-25 19:50:22,539 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-06-25 19:50:36,425 INFO User info submitted: {'age': 'N/A', 'education': 'N/A', 'occupation': 'N/A', 'language': 'N/A'}
+2024-06-25 19:53:44,302 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-06-25 19:53:52,874 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/urls.py changed, reloading.
+2024-06-25 19:53:55,722 WARNING Not Found: /favicon.ico
+2024-06-25 19:53:58,920 ERROR Internal Server Error: /submit_user_info/
+Traceback (most recent call last):
+  File "/Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py", line 34, in submit_user_info
+    data = json.loads(request.body)
+           ^^^^
+NameError: name 'json' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/genai/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/genai/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py", line 41, in submit_user_info
+    except json.JSONDecodeError:
+           ^^^^
+NameError: name 'json' is not defined
+2024-06-25 19:54:08,632 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-06-25 19:54:10,039 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-06-25 19:54:13,085 INFO User info submitted: {'age': '20', 'education': '', 'occupation': '', 'language': ''}
+2024-06-25 19:54:28,640 INFO Full message to model: 此用戶資訊為： 年齡: 20, 教育程度: , 職業: , 語言: . 請根據此用戶資訊使用適合的術語去介紹NGS給用戶。如果沒有提及語言，預設即為中文。
+
+你好，請問我的年齡為？
+2024-06-25 19:54:32,211 INFO Bot response: 您好！根據您提供的用戶資訊，請問您的年齡是20歲嗎？如果您對 NGS (Next-Generation Sequencing) 有興趣，我可以為您介紹這項技術。NGS 是一種高通量的基因體序列分析技術，可用於快速和準確地檢測基因組中的變異。這在醫學、農業和研究領域都有廣泛的應用。您對 NGS 有任何問題嗎？
+2024-06-25 19:56:24,878 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/urls.py changed, reloading.
+2024-06-25 19:57:38,630 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-06-25 19:57:49,176 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-06-25 19:57:57,665 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-06-25 19:58:06,050 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-06-25 19:58:12,430 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-06-25 19:58:15,762 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-06-25 19:58:55,651 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-06-25 19:59:46,754 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-06-25 19:59:48,207 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-06-25 19:59:49,498 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-06-25 19:59:53,973 INFO User info submitted: {'age': '35', 'education': '', 'occupation': '', 'language': ''}
+2024-06-25 19:59:59,351 INFO Full message to model: 此用戶資訊為： 年齡: 35, 教育程度: , 職業: , 語言: . 請根據此用戶資訊使用適合的術語去介紹NGS給用戶。如果沒有提及語言，預設即為中文。
+
+我的年齡為？
+2024-06-25 20:00:01,003 INFO Bot response: 您的年齡是 35 歲。您想更了解什麼關於 NGS 嗎？

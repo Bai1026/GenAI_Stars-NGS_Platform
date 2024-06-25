@@ -257,3 +257,47 @@ footer {
     margin-top: 0;
     margin-bottom: 10px; /* 确保段落之间有一致的间距 */
 }
+
+
+
+/* 表单容器 */
+#user-info-form {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 表单标签 */
+#user-info-form label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/* 表单输入字段 */
+#user-info-form input {
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+}
+
+/* 表单按钮 */
+#user-info-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+#user-info-form button:hover {
+    background-color: #0056b3;
+}

@@ -21,28 +21,9 @@
             <button class="open-btn" onclick="toggleNav()">☰</button>
             <div id="chat-container">
                 <h1>Welcome to Our NGS Chatbot</h1>
-
-                <form id="user-info-form" action="{% url 'submit_user_info' %}" method="post">
-                    {% csrf_token %}
-                    <label for="age">年齡:</label>
-                    <input type="number" id="age" name="age"><br><br>
-                
-                    <label for="education">教育程度:</label>
-                    <input type="text" id="education" name="education"><br><br>
-                
-                    <label for="occupation">職業:</label>
-                    <input type="text" id="occupation" name="occupation"><br><br>
-                
-                    <label for="language">語言:</label>
-                    <input type="text" id="language" name="language"><br><br>
-                    
-                    <button type="submit">Submit</button>
-                </form>
-                
-                
                 <div id="messages-container">
                     <div id="messages">
-                        <div class="message bot">{{ preset_response }}</div>
+                        <!-- Initial bot response will be injected here -->
                     </div>
                 </div>
                 <form id="chat-form">
@@ -68,57 +49,6 @@
     </footer>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const presetResponse = "{{ preset_response }}";
-            const messagesDiv = document.getElementById('messages');
-            const presetMessageDiv = document.createElement('div');
-            presetMessageDiv.className = 'message bot';
-            presetMessageDiv.textContent = presetResponse;
-            messagesDiv.appendChild(presetMessageDiv);
-        });
-
-        document.getElementById('user-info-form').addEventListener('submit', async function(event) {
-        event.preventDefault();
-        const form = event.target;
-
-        const formData = new FormData(form);
-        const formObject = {};
-        formData.forEach((value, key) => formObject[key] = value);
-
-        console.log('Submitting user info:', formObject);  // 添加调试日志
-
-        try {
-            const response = await fetch(form.action, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRFToken': form.querySelector('input[name="csrfmiddlewaretoken"]').value
-                },
-                body: JSON.stringify(formObject)
-            });
-
-            const data = await response.json();
-
-            if (response.ok) {
-                // 隐藏表单
-                form.style.display = 'none';
-
-                // 在聊天窗口显示初始提示
-                const initialPrompt = `目前使用者資訊：年齡: ${formObject.age || 'N/A'}, 教育程度: ${formObject.education || 'N/A'}, 職業: ${formObject.occupation || 'N/A'}, 語言: ${formObject.language || 'N/A'}，請根據此用戶資訊使用適合的術語去介紹NGS給用戶。如果沒有提及語言，預設即為中文。`;
-                const messagesDiv = document.getElementById('messages');
-                const initialPromptDiv = document.createElement('div');
-                initialPromptDiv.className = 'message bot';
-                initialPromptDiv.textContent = initialPrompt;
-                messagesDiv.appendChild(initialPromptDiv);
-            } else {
-                console.error(data.error || 'An error occurred');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-        }
-    });
-
-
         document.getElementById('chat-form').addEventListener('submit', async function(event) {
             event.preventDefault();
             const messageInput = document.getElementById('message-input');
