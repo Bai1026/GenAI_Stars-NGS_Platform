@@ -62,3 +62,24 @@ NameError: name 'json' is not defined
 
 我的年齡為？
 2024-06-25 20:00:01,003 INFO Bot response: 您的年齡是 35 歲。您想更了解什麼關於 NGS 嗎？
+2024-06-26 13:49:59,016 ERROR Error during chat: File ../google_cloud_api.json was not found.
+2024-06-26 13:49:59,019 ERROR Internal Server Error: /chat/
+2024-06-26 13:51:34,446 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-06-26 13:51:47,212 ERROR Error during chat: File /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/google_cloud_api.json was not found.
+2024-06-26 13:51:47,214 ERROR Internal Server Error: /chat/
+2024-06-26 13:52:33,004 ERROR Error during chat: The file /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/google_cloud_api.json does not have a valid type. Type is None, expected one of ('authorized_user', 'service_account', 'external_account', 'external_account_authorized_user', 'impersonated_service_account', 'gdch_service_account').
+2024-06-26 13:52:33,006 ERROR Internal Server Error: /chat/
+2024-06-27 09:45:50,124 WARNING Not Found: /favicon.ico
+2024-06-27 09:45:51,966 WARNING Not Found: /favicon.ico
+2024-06-27 09:45:58,640 WARNING Not Found: /favicon.ico
+2024-06-27 16:49:46,604 WARNING Not Found: /favicon.ico
+2024-06-27 16:53:57,949 WARNING Not Found: /favicon.ico
+2024-06-27 16:54:25,701 WARNING Not Found: /favicon.ico
+2024-06-27 16:56:08,575 WARNING Not Found: /favicon.ico
+2024-06-27 17:08:54,660 WARNING Not Found: /favicon.ico
+2024-06-27 17:09:26,480 WARNING Not Found: /favicon.ico
+2024-06-27 17:09:37,594 WARNING Not Found: /favicon.ico
+2024-06-27 17:57:47,887 WARNING Not Found: /favicon.ico
+2024-06-27 17:57:48,749 WARNING Not Found: /favicon.ico
+2024-06-27 17:57:49,727 WARNING Not Found: /favicon.ico
+2024-06-27 17:57:50,465 WARNING Not Found: /favicon.ico

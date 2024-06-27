@@ -39,15 +39,16 @@
                     <button type="submit">Submit</button>
                 </form>
                 
-                
                 <div id="messages-container">
                     <div id="messages">
                         <div class="message bot">{{ preset_response }}</div>
                     </div>
                 </div>
-                <form id="chat-form">
+                <form id="chat-form" enctype="multipart/form-data">
                     <input type="text" id="message-input" autocomplete="off" placeholder="Type your message here...">
                     <button type="submit">Send</button>
+                    <button type="button" onclick="startRecording()">Record</button>
+                    <button type="button" onclick="stopRecording()" disabled>Stop</button>
                 </form>
             </div>
         </div>
@@ -78,46 +79,43 @@
         });
 
         document.getElementById('user-info-form').addEventListener('submit', async function(event) {
-        event.preventDefault();
-        const form = event.target;
+            event.preventDefault();
+            const form = event.target;
 
-        const formData = new FormData(form);
-        const formObject = {};
-        formData.forEach((value, key) => formObject[key] = value);
+            const formData = new FormData(form);
+            const formObject = {};
+            formData.forEach((value, key) => formObject[key] = value);
 
-        console.log('Submitting user info:', formObject);  // 添加调试日志
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': form.querySelector('input[name="csrfmiddlewaretoken"]').value
+                    },
+                    body: JSON.stringify(formObject)
+                });
 
-        try {
-            const response = await fetch(form.action, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRFToken': form.querySelector('input[name="csrfmiddlewaretoken"]').value
-                },
-                body: JSON.stringify(formObject)
-            });
+                const data = await response.json();
 
-            const data = await response.json();
+                if (response.ok) {
+                    // 隐藏表单
+                    form.style.display = 'none';
 
-            if (response.ok) {
-                // 隐藏表单
-                form.style.display = 'none';
-
-                // 在聊天窗口显示初始提示
-                const initialPrompt = `目前使用者資訊：年齡: ${formObject.age || 'N/A'}, 教育程度: ${formObject.education || 'N/A'}, 職業: ${formObject.occupation || 'N/A'}, 語言: ${formObject.language || 'N/A'}，請根據此用戶資訊使用適合的術語去介紹NGS給用戶。如果沒有提及語言，預設即為中文。`;
-                const messagesDiv = document.getElementById('messages');
-                const initialPromptDiv = document.createElement('div');
-                initialPromptDiv.className = 'message bot';
-                initialPromptDiv.textContent = initialPrompt;
-                messagesDiv.appendChild(initialPromptDiv);
-            } else {
-                console.error(data.error || 'An error occurred');
+                    // 在聊天窗口显示初始提示
+                    const initialPrompt = `目前使用者資訊：年齡: ${formObject.age || 'N/A'}, 教育程度: ${formObject.education || 'N/A'}, 職業: ${formObject.occupation || 'N/A'}, 語言: ${formObject.language || 'N/A'}，請根據此用戶資訊使用適合的術語去介紹NGS給用戶。如果沒有提及語言，預設即為中文。`;
+                    const messagesDiv = document.getElementById('messages');
+                    const initialPromptDiv = document.createElement('div');
+                    initialPromptDiv.className = 'message bot';
+                    initialPromptDiv.textContent = initialPrompt;
+                    messagesDiv.appendChild(initialPromptDiv);
+                } else {
+                    console.error(data.error || 'An error occurred');
+                }
+            } catch (error) {
+                console.error('Error:', error);
             }
-        } catch (error) {
-            console.error('Error:', error);
-        }
-    });
-
+        });
 
         document.getElementById('chat-form').addEventListener('submit', async function(event) {
             event.preventDefault();
@@ -173,6 +171,63 @@
             messagesDiv.scrollTop = messagesDiv.scrollHeight;
         });
 
+        let mediaRecorder;
+        let recordedChunks = [];
+
+        function startRecording() {
+            navigator.mediaDevices.getUserMedia({ audio: true })
+                .then(stream => {
+                    mediaRecorder = new MediaRecorder(stream);
+                    mediaRecorder.ondataavailable = event => {
+                        if (event.data.size > 0) {
+                            recordedChunks.push(event.data);
+                        }
+                    };
+                    mediaRecorder.start();
+                    document.querySelector('button[onclick="stopRecording()"]').disabled = false;
+                    document.querySelector('button[onclick="startRecording()"]').disabled = true;
+                })
+                .catch(error => {
+                    console.error('Error accessing microphone', error);
+                });
+        }
+
+        function stopRecording() {
+            mediaRecorder.stop();
+            mediaRecorder.onstop = async () => {
+                const audioBlob = new Blob(recordedChunks, { type: 'audio/wav' });
+                const formData = new FormData();
+                formData.append('audio', audioBlob);
+                formData.append('csrfmiddlewaretoken', '{{ csrf_token }}');
+
+                try {
+                    const response = await fetch('/chat/', {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    const data = await response.json();
+
+                    if (response.ok) {
+                        // 添加机器人回复到聊天窗口
+                        const messagesDiv = document.getElementById('messages');
+                        const botMessageDiv = document.createElement('div');
+                        botMessageDiv.className = 'message bot';
+                        botMessageDiv.textContent = data.response;
+                        messagesDiv.appendChild(botMessageDiv);
+                    } else {
+                        console.error(data.error || 'An error occurred');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                }
+
+                recordedChunks = [];
+                document.querySelector('button[onclick="stopRecording()"]').disabled = true;
+                document.querySelector('button[onclick="startRecording()"]').disabled = false;
+            };
+        }
+
         function toggleNav() {
             const sidebar = document.getElementById("sidebar");
             const content = document.getElementById("mainContent");
@@ -186,5 +241,7 @@
             }
         }
     </script>
+
+
 </body>
 </html>

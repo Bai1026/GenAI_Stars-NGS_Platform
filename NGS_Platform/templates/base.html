@@ -5,6 +5,11 @@
     <title>{% block title %}NGS Platform{% endblock %}</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        h1 {
+            font-size: 3em; /* 增大h1标题的字体大小 */
+        }
+    </style>
 </head>
 <body>
     <div id="container">
@@ -21,6 +26,7 @@
             {% block content %}{% endblock %}
         </div>
     </div>
+    
     <!-- <footer>
         <div class="footer-container">
             <div class="footer-text">© GenAI Stars 2024 NGS Platform</div>
@@ -34,13 +40,21 @@
             </div>
         </div>
     </footer> -->
+
     <script src="{% static 'js/script.js' %}"></script>
+
+
+    <script
+      data-embed-id="32152e4a-4579-4c00-b123-cf73c9632fc2"
+      data-base-api-url="http://localhost:3014/api/embed"
+      src="http://localhost:3014/embed/anythingllm-chat-widget.min.js">
+    </script>
+
 </body>
 </html>
 
 <footer>
     <div class="footer-container">
-        <div class="footer-text">© GenAI Stars 2024 NGS Platform</div>
         <div class="footer-icon">
             <a href="https://github.com/Bai1026/GenAI_Stars-NGS_Platform/tree/main" target="_blank">
                 <img src="{% static 'images/github.png' %}" alt="Our GitHub" style="width:20px; height:20px;">
@@ -49,5 +63,7 @@
                 <img src="{% static 'images/email.png' %}" alt="Our Email" style="width:20px; height:20px;">
             </a>
         </div>
+        <div class="footer-text">© GenAI Stars 2024 NGS Platform</div>
     </div>
 </footer>
+

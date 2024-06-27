@@ -193,10 +193,14 @@ footer {
 
 .footer-icon {
     flex-grow: 0;
+    display: flex;
+    justify-content: flex-start; /* 确保图标在左边 */
+    gap: 10px; /* 可选：添加图标之间的间距 */
 }
 
 .footer-icon a img {
-    width: 24px;
+    width: 20px; /* 调整宽度以匹配你的样式 */
+    height: 20px; /* 调整高度以匹配你的样式 */
 }
 
 
