@@ -67,11 +67,13 @@ def chat(request):
     if request.method == 'POST':
         try:
             user_message = request.POST.get('message')
+            transcription = None
             logger.info(f"Received message: {user_message}")
             if not user_message and 'audio' in request.FILES:
                 audio_file = request.FILES['audio']
                 logger.info(f"Received audio file: {audio_file.name}")
-                user_message = transcribe_speech(audio_file)
+                transcription = transcribe_speech(audio_file)
+                user_message = transcription
                 if not user_message:
                     return HttpResponseBadRequest("Audio transcription failed")
 
@@ -95,7 +97,7 @@ def chat(request):
 
             logger.info(f"Bot response: {bot_response}")
 
-            return JsonResponse({'response': bot_response})
+            return JsonResponse({'response': bot_response, 'transcription': transcription})
 
         except Exception as e:
             logger.error(f"Error during chat: {str(e)}")

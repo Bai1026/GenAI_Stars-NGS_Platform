@@ -11,16 +11,16 @@
     <div id="container">
         <div id="sidebar" class="sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">×</a>
-            <h2>Navigation</h2>
+            <h2>選單</h2>
             <ul>
-                <li><a href="{% url 'home' %}">Introduction</a></li>
-                <li><a href="{% url 'index' %}">Chatbot</a></li>
+                <li><a href="{% url 'home' %}">NGS介紹</a></li>
+                <li><a href="{% url 'index' %}">語音專區</a></li>
             </ul>
         </div>
         <div id="content" id="mainContent">
             <button class="open-btn" onclick="toggleNav()">☰</button>
             <div id="chat-container">
-                <h1>Welcome to Our NGS Chatbot</h1>
+                <h1>歡迎來到NGS語音專區</h1>
 
                 <form id="user-info-form" action="{% url 'submit_user_info' %}" method="post">
                     {% csrf_token %}
@@ -36,7 +36,7 @@
                     <label for="language">語言:</label>
                     <input type="text" id="language" name="language"><br><br>
                     
-                    <button type="submit">Submit</button>
+                    <button type="submit">確定</button>
                 </form>
                 
                 <div id="messages-container">
@@ -46,10 +46,10 @@
                 </div>
                 <form id="chat-form" enctype="multipart/form-data">
                     {% csrf_token %}
-                    <input type="text" id="message-input" autocomplete="off" placeholder="Type your message here...">
-                    <button type="submit">Send</button>
-                    <button type="button" onclick="startRecording()">Record</button>
-                    <button type="button" onclick="stopRecording()" disabled>Stop</button>
+                    <input type="text" id="message-input" autocomplete="off" placeholder="您想說些什麼呢...">
+                    <!-- <button type="submit">Send</button> -->
+                    <button type="button" onclick="startRecording()">語音輸入</button>
+                    <button type="button" onclick="stopRecording()" disabled>停止</button>
                 </form>
             </div>
         </div>
@@ -103,10 +103,8 @@
                 const data = await response.json();
 
                 if (response.ok) {
-                    // 隐藏表单
                     form.style.display = 'none';
 
-                    // 在聊天窗口显示初始提示
                     const initialPrompt = `目前使用者資訊：年齡: ${formObject.age || 'N/A'}, 教育程度: ${formObject.education || 'N/A'}, 職業: ${formObject.occupation || 'N/A'}, 語言: ${formObject.language || 'N/A'}，請根據此用戶資訊使用適合的術語去介紹NGS給用戶。如果沒有提及語言，預設即為中文。`;
                     const messagesDiv = document.getElementById('messages');
                     const initialPromptDiv = document.createElement('div');
@@ -126,7 +124,7 @@
             event.preventDefault();
             const messageInput = document.getElementById('message-input');
             const message = messageInput.value;
-            console.log('Message:', message); // 添加日志
+            console.log('Message:', message);
             messageInput.value = '';
 
             const formData = new FormData();
@@ -156,6 +154,13 @@
                 const data = await response.json();
 
                 if (response.ok) {
+                    if (data.transcription) {
+                        const transcriptionDiv = document.createElement('div');
+                        transcriptionDiv.className = 'message user';
+                        transcriptionDiv.textContent = `Transcription: ${data.transcription}`;
+                        messagesDiv.appendChild(transcriptionDiv);
+                    }
+
                     const botMessageDiv = document.createElement('div');
                     botMessageDiv.className = 'message bot';
                     botMessageDiv.textContent = data.response;
