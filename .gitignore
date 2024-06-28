@@ -3,3 +3,5 @@
 __pycache__/
 *.pyc
 record
+google_cloud_api.json
+NGS_Platform/chatbot_app/google_cloud_api.json
