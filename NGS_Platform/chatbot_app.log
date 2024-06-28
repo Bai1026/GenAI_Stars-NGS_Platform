@@ -83,3 +83,80 @@ NameError: name 'json' is not defined
 2024-06-27 17:57:48,749 WARNING Not Found: /favicon.ico
 2024-06-27 17:57:49,727 WARNING Not Found: /favicon.ico
 2024-06-27 17:57:50,465 WARNING Not Found: /favicon.ico
+2024-06-28 13:05:10,564 ERROR Error during chat: The file /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/google_cloud_api.json does not have a valid type. Type is None, expected one of ('authorized_user', 'service_account', 'external_account', 'external_account_authorized_user', 'impersonated_service_account', 'gdch_service_account').
+2024-06-28 13:05:10,569 ERROR Internal Server Error: /chat/
+2024-06-28 15:32:52,964 ERROR Error during chat: expected str, bytes or os.PathLike object, not InMemoryUploadedFile
+2024-06-28 15:32:52,967 ERROR Internal Server Error: /chat/
+2024-06-28 15:35:53,453 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-06-28 15:36:02,259 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-06-28 15:36:20,427 ERROR Error during chat: 400 sample_rate_hertz `16000` in RecognitionConfig must either be unspecified or match the value in the WEBM OPUS header `48000`.
+2024-06-28 15:36:20,430 ERROR Internal Server Error: /chat/
+2024-06-28 15:37:50,559 ERROR Error during chat: 400 sample_rate_hertz `16000` in RecognitionConfig must either be unspecified or match the value in the WEBM OPUS header `48000`.
+2024-06-28 15:37:50,562 ERROR Internal Server Error: /chat/
+2024-06-28 15:38:21,528 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-06-28 15:39:09,127 ERROR Error during chat: [Errno 2] No such file or directory: 'ffprobe'
+2024-06-28 15:39:09,132 ERROR Internal Server Error: /chat/
+2024-06-28 15:58:12,904 ERROR Error during chat: 400 RecognitionAudio not set.
+2024-06-28 15:58:12,907 ERROR Internal Server Error: /chat/
+2024-06-28 15:59:29,705 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-06-28 16:01:20,508 WARNING Bad Request: /chat/
+2024-06-28 16:04:11,021 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-06-28 16:05:39,041 INFO Received message: None
+2024-06-28 16:05:39,045 INFO Received audio file: blob
+2024-06-28 16:05:40,023 WARNING Bad Request: /chat/
+2024-06-28 16:06:34,083 INFO Received message: None
+2024-06-28 16:06:34,086 INFO Received audio file: blob
+2024-06-28 16:06:34,801 WARNING Bad Request: /chat/
+2024-06-28 16:08:10,502 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-06-28 16:08:18,187 INFO Received message: None
+2024-06-28 16:08:18,189 INFO Received audio file: blob
+2024-06-28 16:08:18,836 WARNING Bad Request: /chat/
+2024-06-28 16:08:28,778 WARNING Not Found: /favicon.ico
+2024-06-28 16:08:33,758 INFO Received message: None
+2024-06-28 16:08:33,758 INFO Received audio file: blob
+2024-06-28 16:08:34,337 WARNING Bad Request: /chat/
+2024-06-28 16:09:11,931 INFO Received message: None
+2024-06-28 16:09:11,933 INFO Received audio file: blob
+2024-06-28 16:09:12,563 WARNING Bad Request: /chat/
+2024-06-28 16:10:24,441 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-06-28 16:10:40,675 INFO Received message: None
+2024-06-28 16:10:40,677 INFO Received audio file: blob
+2024-06-28 16:10:41,343 WARNING Bad Request: /chat/
+2024-06-28 16:13:31,779 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-06-28 16:14:51,120 INFO Received message: None
+2024-06-28 16:14:51,123 INFO Received audio file: blob
+2024-06-28 16:14:51,124 ERROR Error during chat: module 'whisper' has no attribute 'load_model'
+2024-06-28 16:14:51,124 ERROR Internal Server Error: /chat/
+2024-06-28 16:15:50,191 INFO Received message: None
+2024-06-28 16:15:50,193 INFO Received audio file: blob
+2024-06-28 16:15:50,193 ERROR Error during chat: module 'whisper' has no attribute 'load_model'
+2024-06-28 16:15:50,194 ERROR Internal Server Error: /chat/
+2024-06-28 16:16:42,174 INFO Received message: None
+2024-06-28 16:16:42,176 INFO Received audio file: blob
+2024-06-28 16:16:54,222 ERROR Error during chat: expected np.ndarray (got InMemoryUploadedFile)
+2024-06-28 16:16:54,233 ERROR Internal Server Error: /chat/
+2024-06-28 16:17:42,670 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-06-28 16:17:45,227 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-06-28 16:17:52,451 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-06-28 16:18:12,132 INFO Received message: None
+2024-06-28 16:18:12,135 INFO Received audio file: blob
+2024-06-28 16:18:13,704 INFO Full message to model: 此用戶資訊為： 年齡: None, 教育程度: None, 職業: None, 語言: None. 請根據此用戶資訊使用適合的術語去介紹NGS給用戶。如果沒有提及語言，預設即為中文。
+
+你是誰?
+2024-06-28 16:18:18,060 INFO Bot response: 我是一個機器助手，可以幫助您解答問題和提供資訊。現在讓我來介紹一下NGS給您：
+
+NGS是一種高通量的基因體學技術，它可以用來快速且精確地分析DNA或RNA序列。透過NGS，我們可以瞭解基因組中的變異，探索基因與疾病之間的關係，並進行許多其他基因體研究。希望這些資訊對您有所幫助！如果您對NGS還有其他問題，歡迎隨時向我提出。
+2024-06-28 16:20:14,611 INFO Received message: None
+2024-06-28 16:20:14,614 INFO Received audio file: blob
+2024-06-28 16:20:16,097 INFO Full message to model: 此用戶資訊為： 年齡: None, 教育程度: None, 職業: None, 語言: None. 請根據此用戶資訊使用適合的術語去介紹NGS給用戶。如果沒有提及語言，預設即為中文。
+
+ว่านื้อค่ะ ยอ่าหัวหัวหัว
+2024-06-28 16:20:20,017 INFO Bot response: 根據您提供的用戶資訊，我將用一般術語介紹 NGS 給您。NGS 代表「下一代定序」，是一種高效率的 DNA 或 RNA 定序技術，能有效地解碼基因組的信息，有助於了解基因組的結構和功能。這項技術在研究領域中扮演著重要的角色，可應用於基因研究、藥物開發等領域。如果您對 NGS 或相關領域有興趣，我可以提供更多詳細的資訊和幫助。
+2024-06-28 16:21:43,938 INFO Received message: None
+2024-06-28 16:21:43,941 INFO Received audio file: blob
+2024-06-28 16:21:45,715 INFO Full message to model: 此用戶資訊為： 年齡: None, 教育程度: None, 職業: None, 語言: None. 請根據此用戶資訊使用適合的術語去介紹NGS給用戶。如果沒有提及語言，預設即為中文。
+
+請問NGS在幹嘛
+2024-06-28 16:21:50,219 INFO Bot response: 根據用戶提供的資訊，我將用較為簡單易懂的術語向用戶介紹 NGS（Next Generation Sequencing）。
+
+NGS 是一種高效率的基因序列分析技術，可快速、精確地解讀DNA或RNA序列。透過 NGS 技術，科學家能夠更有效地研究基因組、基因變異和基因表現，有助於了解疾病的發生機制、治療方法和個體基因特徵等相關議題。NGS 的廣泛應用包括基因體學、轉錄組學、表觀遺傳學等領域。
