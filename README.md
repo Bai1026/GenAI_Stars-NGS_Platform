@@ -5,6 +5,15 @@
     1. Introduction
     2. Chatbot Platform (Fine-tune with the expertise)
 
+## Demo Video
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=-xPZ8_obY3Y">
+    <img src="https://img.youtube.com/vi/-xPZ8_obY3Y/0.jpg" alt="Watch the video">
+  </a>
+</p>
+
+
 ## How to use
 First, you need to install the package we need
 ```bash
