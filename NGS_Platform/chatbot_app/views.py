@@ -8,14 +8,12 @@ import json
 import whisper
 import tempfile
 
-# 加载环境变量
+
 load_dotenv()
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
-# 全局变量来存储用户信息
 user_info = {}
 
-# 配置日志记录
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s %(levelname)s %(message)s',
