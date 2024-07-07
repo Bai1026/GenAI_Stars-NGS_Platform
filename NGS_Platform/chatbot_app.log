@@ -257,3 +257,48 @@ NGS 指的是「下一代测序技术」，是一種透過高效率的方式來�
 
 請跟我介紹一下ngs
 2024-07-01 05:58:21,095 INFO Bot response: 根據您提供的用戶資訊，我們來介紹一下NGS。NGS是「下一代定序」的縮寫，是一種高通量的DNA/RNA定序技術，可以快速且準確地解讀DNA/RNA序列。通過NGS技術，科學家可以對基因組、轉錄組等進行全面的檢測和分析，從而深入研究基因、疾病、進化等領域。雖然您未提及具體的教育程度、職業和語言，但希望這個簡單的介紹可以讓您對NGS有些基本了解。如果有任何問題，歡迎隨時向我詢問！
+2024-07-06 13:14:53,140 WARNING Not Found: /favicon.ico
+2024-07-06 13:21:25,196 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-07-06 13:21:38,812 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-07-06 13:21:53,680 INFO User info submitted: {'age': '20', 'education': '', 'occupation': '', 'language': ''}
+2024-07-06 13:22:16,090 INFO Received message: None
+2024-07-06 13:22:16,090 INFO Received audio file: blob
+2024-07-06 13:22:17,840 INFO Full message to model: 此用戶資訊為： 職業: 。請解釋NGS技術的基本原理及其在各行業中的應用。
+
+你好嗎
+2024-07-06 13:22:24,888 INFO Bot response: 你好！關於NGS技術，它是指下一代高通量基因序列分析技術，主要用於快速、準確地測序DNA和RNA。其基本原理是通過將DNA或RNA樣本分解成許多小片段，然後同時進行大量平行測序，最後通過對這些片段的比對和拼接來獲得完整的基因組序列或轉錄組序列。
+
+NGS技術在各行業中有廣泛的應用。在生命科學領域，NGS技術可以用於基因體學、轉錄組學、蛋白質組學等方面的研究，幫助科學家更好地理解生命的運作機制；在臨床醫學領域，NGS技術可以用於基因檢測、疾病診斷、個性化醫學等方面，有助於提高醫療水平和精準醫學的發展；在農業領域，NGS技術可以用於農作物基因改良、病蟲害檢測等方面，提高農業生產效率和產量；在環境保護領域，NGS技術可以用於生態環境監測、物種鑒定等方面，有助於保護生態環境。
+
+希望這些信息對你有所幫助！如果你有任何其他問題，歡迎隨時向我提問。
+2024-07-06 13:27:58,164 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-07-06 13:28:00,444 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-07-06 13:28:15,190 INFO User info submitted: {'age': '10', 'education': '', 'occupation': '', 'language': ''}
+2024-07-06 13:28:20,137 INFO Received message: None
+2024-07-06 13:28:20,138 INFO Received audio file: blob
+2024-07-06 13:28:21,553 INFO Full message to model: 此用戶資訊為： 年齡: 10, 教育程度: , 職業: , 語言: 。請用淺顯易懂的語言介紹什麼是NGS技術，並解釋其基本原理。
+
+你好
+2024-07-06 13:28:26,126 INFO Bot response: 你好！NGS 技術是現代生物學中常用的一種高通量DNA或RNA序列分析技術。透過 NGS 技術，科學家可以快速精確地分析大量的基因組或轉錄組資料，幫助我們更深入地了解生物體的基因組結構、突變情況，以及基因表現等重要信息。
+
+NGS 技術的基本原理是將待測的DNA或RNA樣本分割成許多小片段，然後通過高效的平行化技術同時進行大量的序列化。這些序列化的數據最終會被整合和分析，以重建原始的DNA或RNA序列，並進一步對基因組進行深入研究。
+
+簡而言之，NGS 技術提供了一種快速、高效、準確的方式來分析生物體的DNA或RNA，為生物學研究和應用帶來了革命性的變化。希望這段介紹能幫助你更好地理解NGS技術！
+2024-07-06 13:29:27,500 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-07-06 13:30:26,947 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-07-06 13:30:39,428 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-07-06 13:31:11,044 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-07-06 13:31:18,525 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-07-06 13:31:20,881 INFO User info submitted: {'age': '', 'education': '', 'occupation': '', 'language': ''}
+2024-07-06 13:31:24,483 INFO User info submitted: {'age': '66', 'education': '', 'occupation': '', 'language': ''}
+2024-07-06 13:31:27,731 INFO Received message: None
+2024-07-06 13:31:27,732 INFO Received audio file: blob
+2024-07-06 13:31:29,132 INFO Full message to model: 此用戶資訊為： 年齡: 66, 教育程度: , 職業: , 語言: 。請用淺顯易懂的語言介紹什麼是NGS技術，並解釋其基本原理。
+
+你好
+2024-07-06 13:31:32,937 INFO Bot response: 你好！NGS技術指的是下一代定序技術，它是一種高效率、高通量的DNA或RNA定序技術，用來分析和研究基因組或轉錄組。
+
+基本原理是將DNA或RNA樣本切割成小片段，然後進行放大和擴增，接著通過同時對數百萬個片段進行平行定序，最後通過電腦將序列片段重新組合成完整的基因組或轉錄組序列。這種快速且高效的定序方法可以幫助科學家更快地了解基因組中的變異、基因表現和其他生物學過程。希望這樣的解釋對您有所幫助！
+2024-07-06 13:32:22,204 INFO /Users/zoungming/Desktop/GenAI_Stars-NGS_Platform/NGS_Platform/chatbot_app/views.py changed, reloading.
+2024-07-06 13:35:55,975 WARNING Not Found: /favicon.ico
+2024-07-06 19:35:53,803 WARNING Not Found: /favicon.ico

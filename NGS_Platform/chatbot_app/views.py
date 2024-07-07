@@ -45,20 +45,43 @@ def submit_user_info(request):
     return HttpResponseBadRequest("Invalid request method")
 
 def transcribe_speech(audio_file):
-    # 将上传的文件保存到临时文件
     with tempfile.NamedTemporaryFile(delete=False) as temp_file:
         for chunk in audio_file.chunks():
             temp_file.write(chunk)
         temp_file_path = temp_file.name
 
-    # 使用 Whisper 模型转录音频
     model = whisper.load_model("base")
     result = model.transcribe(temp_file_path)
     
-    # 删除临时文件
     os.remove(temp_file_path)
     
     return result['text']
+
+
+def get_initial_prompt(user_info):
+    age = user_info.get('age')
+    education = user_info.get('education')
+    occupation = user_info.get('occupation')
+    language = user_info.get('language', '中文')
+
+    # 基本的初始提示
+    initial_prompt = f"此用戶資訊為： 年齡: {age}, 教育程度: {education}, 職業: {occupation}, 語言: {language}。"
+
+    # 根据条件追加内容
+    if age != 'N/A' and (int(age) < 18 | int(age) > 65):
+        initial_prompt += "請用淺顯易懂的語言介紹什麼是NGS技術，並解釋其基本原理。"
+
+    if education in ['小學', '國中', '高中', 'elementary', 'junior high', 'senior high']:
+        initial_prompt += "請用淺顯易懂的語言介紹NGS技術，並解釋其基本原理。"
+
+    if occupation in ['醫生', '醫療人員', '教授', 'doctor', 'professor', 'medical staff']:
+        initial_prompt += "請詳細介紹NGS技術的醫學應用及其在研究中的重要性。"
+
+    if '請用淺顯易懂的語言介紹' not in initial_prompt and '詳細介紹' not in initial_prompt:
+        initial_prompt += "請根據此用戶資訊使用適合的術語去介紹NGS給用戶。如果沒有提及語言，預設即為中文，若有請用用戶語言回答。"
+
+    return initial_prompt
+
 
 def chat(request):
     global user_info
@@ -79,7 +102,8 @@ def chat(request):
                 logger.warning("No message provided")
                 return HttpResponseBadRequest("Message is required")
 
-            initial_prompt = f"此用戶資訊為： 年齡: {user_info.get('age')}, 教育程度: {user_info.get('education')}, 職業: {user_info.get('occupation')}, 語言: {user_info.get('language')}. 請根據此用戶資訊使用適合的術語去介紹NGS給用戶。如果沒有提及語言，預設即為中文。"
+            # initial_prompt = f"此用戶資訊為： 年齡: {user_info.get('age')}, 教育程度: {user_info.get('education')}, 職業: {user_info.get('occupation')}, 語言: {user_info.get('language')}. 請根據此用戶資訊使用適合的術語去介紹NGS給用戶。如果沒有提及語言，預設即為中文。"
+            initial_prompt = get_initial_prompt(user_info)
             full_message = initial_prompt + "\n\n" + user_message
 
             logger.info(f"Full message to model: {full_message}")

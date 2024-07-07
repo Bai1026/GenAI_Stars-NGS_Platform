@@ -267,7 +267,7 @@ footer {
 /* 表单容器 */
 #user-info-form {
     margin: 20px 0;
-    padding: 20px;
+    padding: 10px;
     background-color: rgba(0, 0, 0, 0);
     color: #fff;
     border-radius: 5px;
@@ -290,6 +290,7 @@ footer {
     border-radius: 5px;
     background-color: #fff;
     color: #000;
+    width: 100px;
 }
 
 /* 表单按钮 */
