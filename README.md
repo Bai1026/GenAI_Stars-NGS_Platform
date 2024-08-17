@@ -35,51 +35,46 @@ python manage.py runserver
 ├── NGS_Platform
 │   ├── NGS_Platform
 │   │   ├── __init__.py
-│   │   ├── __pycache__
 │   │   ├── asgi.py
 │   │   ├── settings.py
 │   │   ├── static
-│   │   │   ├── css
-│   │   │   ├── images
-│   │   │   └── js
+│   │   │   └── css
+│   │   │       └── style.css
 │   │   ├── urls.py
 │   │   └── wsgi.py
 │   ├── RAG
 │   │   ├── dataset
-│   │   │   ├── json
-│   │   │   ├── pdf
-│   │   │   ├── pdf_to_json.py
-│   │   │   └── txt
+│   │   │   └── pdf_to_json.py
 │   │   └── initialize.py
 │   ├── chatbot_app
 │   │   ├── __init__.py
-│   │   ├── __pycache__
 │   │   ├── admin.py
 │   │   ├── apps.py
 │   │   ├── migrations
-│   │   │   ├── __init__.py
-│   │   │   └── __pycache__
+│   │   │   └── __init__.py
 │   │   ├── models.py
 │   │   ├── tests.py
 │   │   ├── urls.py
 │   │   └── views.py
 │   ├── home
 │   │   ├── __init__.py
-│   │   ├── __pycache__
 │   │   ├── admin.py
 │   │   ├── apps.py
 │   │   ├── migrations
-│   │   │   ├── __init__.py
-│   │   │   └── __pycache__
+│   │   │   └── __init__.py
 │   │   ├── models.py
 │   │   ├── tests.py
 │   │   ├── urls.py
 │   │   └── views.py
 │   ├── manage.py
 │   └── templates
+│       ├── base.html
 │       ├── chatbot_app
+│       │   ├── chat.html
+│       │   ├── index-old.html
+│       │   └── index.html
 │       └── home
-├── record
+│           └── home.html
 └── test_api.py
 ```
 
