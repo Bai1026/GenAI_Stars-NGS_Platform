@@ -30,6 +30,59 @@ Lastly, run the Django server to open the website
 python manage.py runserver
 ```
 
+## Structure
+```bash
+├── NGS_Platform
+│   ├── NGS_Platform
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   ├── asgi.py
+│   │   ├── settings.py
+│   │   ├── static
+│   │   │   ├── css
+│   │   │   ├── images
+│   │   │   └── js
+│   │   ├── urls.py
+│   │   └── wsgi.py
+│   ├── RAG
+│   │   ├── dataset
+│   │   │   ├── json
+│   │   │   ├── pdf
+│   │   │   ├── pdf_to_json.py
+│   │   │   └── txt
+│   │   └── initialize.py
+│   ├── chatbot_app
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── migrations
+│   │   │   ├── __init__.py
+│   │   │   └── __pycache__
+│   │   ├── models.py
+│   │   ├── tests.py
+│   │   ├── urls.py
+│   │   └── views.py
+│   ├── home
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── migrations
+│   │   │   ├── __init__.py
+│   │   │   └── __pycache__
+│   │   ├── models.py
+│   │   ├── tests.py
+│   │   ├── urls.py
+│   │   └── views.py
+│   ├── manage.py
+│   └── templates
+│       ├── chatbot_app
+│       └── home
+├── record
+└── test_api.py
+```
+
 <!-- git rm --cached '*__pycache__'
 git commit -m "Remove all __pycache__ files from tracking"
 find . -name '__pycache__' -type f -delete
